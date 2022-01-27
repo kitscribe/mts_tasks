@@ -1,7 +1,8 @@
 import math
+import typing
 
 
-def roundup(x: [int, float]) -> int:
+def roundup(x: typing.Union[int, float]) -> int:
     """
     round up to the nearest hundreds
     :param x: value to round

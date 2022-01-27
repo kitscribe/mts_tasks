@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 from classes import CustomFile
+import typing
 import os
 import sys
 
 
-def get_data(path: [str, os.PathLike]) -> dict:
+def get_data(path: typing.Union[str, os.PathLike]) -> typing.Dict:
     """
     Parse all files into the given folder and return a dict
     of the form {<round_size>: tuple(<files_count>, [<files extensions>])}

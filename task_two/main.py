@@ -1,7 +1,39 @@
 from classes import Person
+import typing
 
 
-def process_names(items: iter) -> dict:
+def process_names(items: typing.Iterable) -> typing.Dict:
+    """
+    The func gets iterable of full names,
+    process them and return a dict form of
+    {
+      <First_surname_letter>:
+        {
+          <First_name_letter>: [<List of full names>]
+        }
+    }
+    :param items: and iterable of full names
+    :return: dict
+
+    Example:
+    process_names(("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"))
+
+    Output:
+{
+    "С":{
+        "И":["Иван Сергеев", "Инна Серова"],
+        "А":["Анна Савельева"]
+    },
+
+    "А":{
+        "П":["Петр Алексеев"]
+    },
+
+    "И":{
+        "И":["Илья Иванов"]
+    }
+}
+    """
     persons = [Person(*item.split()) for item in items]
     res = dict()
 
